@@ -210,9 +210,9 @@ width : 400px;
 		<tr><td>&nbsp;</td></tr>
 		<tr>
 				<td id = table3 colspan ="2" style = "text-align: center;">
-				<input type="submit" value="회원가입"> 
-				<input type="reset" value="재작성"> 
-				<input onclick="location.href='/javas/mypage'" type="button" value="취소">
+				<input class="btn btn-primary pull-right" type="submit" value="회원가입"> 
+				<input class="btn btn-primary pull-right" type="reset" value="재작성"> 
+				<input class="btn btn-primary pull-right" onclick="location.href='/javas/mypage'" type="button" value="취소">
 				</td>
 			</tr>
 		</table>
