@@ -146,33 +146,32 @@ padding: 20px 40px;
 	    </div>
 	  </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
+     <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread">구인 게시판</h1>
+			 <h1 class="mb-2 bread">구인 게시판</h1>
             <p class="breadcrumbs"><span class="mr-2"><a href="/javas/main">홈 <i class="ion-ios-arrow-forward"></i></a></span> <span>구인 게시판 <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
     </section>
+
     
     <br><br>
 	<c:if test="${!empty loginVO}">
 		<div class="icon d-flex justify-content-center align-items-center">
-			<span> <img
-				src="/javas/resources/images2/<c:out value="${loginVO.mem_userid}" />.png"
-				width="100"></span>
+			<span> <img src="/javas/resources/images2/<c:out value="${loginVO.mem_userid}" />.png" width="100"></span>
 		</div>
-		<div class="text"
-			style="text-align: center; font-family: 'Do Hyeon', sans-serif;">
+		<div class="text" style="text-align: center; font-family: 'Do Hyeon', sans-serif;">
 			<h4>
 				<c:out value="${loginVO.mem_username}" />
 				님 환영합니다!
 			</h4>
+		</div>
 	</c:if>
-	</div>
+
 	<br>
    <hr style="width : 85%;">
    <br><br>
@@ -189,20 +188,13 @@ JobadVO vo = (JobadVO)request.getAttribute("vo");
 <%
 if(list!=null && list.size()!=0){
 %>
-		<section class="ftco-section" >
+		<section class="ftco-section">
 			<div class="container">
 				<div class="row">
 <%
 	for(JobadVO vo1 : list){
 %>
-
-          <div class="col-md-8 col-md-push-3 sidebar ftco-animate">
-	            <div class="sidebar-box ftco-animate">
-						<div id="mapid"></div>
-					</div>
-					</div>
-
-          <div class="ftco-animate">
+       <div class="col-md-6 col-lg-4 ftco-animate">
             <div class="blog-entry">
               <div style = "text-align : center;">
               <img src="/javas/resources/images2/<%= vo1.getMem_userid() %>.png" width="100">
@@ -217,11 +209,12 @@ if(list!=null && list.size()!=0){
                 <a href="/javas/jobad?action=listWriter&mem_username=<%= vo1.getMem_username() %>"><%= vo1.getMem_username() %></a>
                 <p><%= vo1.getPost_content() %></p>
                 <p><%= vo1.getPost_location() %></p>
-                <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0" style="font-family: 'Do Hyeon', sans-serif;"><a href="/javas/jobad?action=listone&post_id=<%= vo1.getPost_id() %>" class="btn btn-primary">더보기 <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<span class="icon-chat"></span> <%= vo1.getPost_review_count() %>
-	                </p>
+        		<!-- <div class="col-md-6 col-lg-4 ftco-animate"> -->
+                <p class="mb-0" style="font-family: 'Do Hyeon', sans-serif;">
+                <a href="/javas/jobad?action=listone&post_id=<%= vo1.getPost_id() %>" class="btn btn-primary">더보기 <span class="ion-ios-arrow-round-forward"></span></a></p>
+                <p class="ml-auto mb-0">
+                <span class="icon-chat"></span> <%= vo1.getPost_review_count() %>
+	            </p>
                 </div>
               </div>
             </div>
@@ -229,8 +222,13 @@ if(list!=null && list.size()!=0){
 <%
 	}
 %>
+			</div>
+			</div>
+
 		</div>
 		</section>
+		
+
 <hr style="width : 85%;">		
         <div>
           <div class="col text-center">

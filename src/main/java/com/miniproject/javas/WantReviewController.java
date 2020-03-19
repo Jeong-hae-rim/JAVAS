@@ -18,7 +18,7 @@ public class WantReviewController{
 	@ResponseBody
 	@RequestMapping(value="/wantreview",produces="applicaiton/json; charset=UTF-8")
 	public String wantreview(int post_id) throws Exception{
-		
+		return new ObjectMapper().writeValueAsString(rdao.listAll(post_id));
 	}
 
 	@ResponseBody
